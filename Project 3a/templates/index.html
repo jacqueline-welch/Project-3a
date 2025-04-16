@@ -4,8 +4,8 @@
         <title>Stock Data Visualizer</title>
     </head>
     <body>
-        <h1>Stock Data Visualizer</h1>
-        <form method="POST">
+        <h1 style="margin-left:20px">Stock Data Visualizer</h1>
+        <form method="POST" style="width:200px; margin-left:50px">
             <div>
                 <label for="symbol">Stock Symbol:</label>
                 <select id="symbol" name="symbol" required>
@@ -15,31 +15,35 @@
                     {% endfor %}
                 </select>
             </div>
+            <br>
             <div>
-                <label for="chart_type">Chart Type</label>
-                <select id="chart_type" name="chart_type" required>
-                    <option value="" disabled selected>--select--</option>
-                    <option value="line">Line</option>
-                    <option value="bar">Bar</option>
-                </select>
+                <label>Chart Type:</label>
+                <input type="radio" id="line_chart" name="chart_type" value="line" required>
+                    <label for="line_chart">Line</label><br>
+                <input style="margin-left:84px" type="radio" id="bar_chart" name="chart_type" value="bar" required>
+                    <label for="bar_chart">Bar</label>  
             </div>
+            <br>
             <div>
-                <label for="function_choice">Time Series</label>
-                <select id="function_choice" name="function_choice" required>
-                    <option value="" disabled selected>--select--</option>
-                    <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
-                </select>
+                <label>Time Series:</label>
+                <input type="radio" id="daily" name="function_choice" value="daily" required>
+                    <label for="daily">Daily</label><br>
+                <input style="margin-left:90px" type="radio" id="weekly" name="function_choice" value="weekly" required>
+                    <label for="weekly">Weekly</label><br>
+                <input style="margin-left:90px" type="radio" id="monthly" name="function_choice" value="monthly" required>
+                    <label for="monthly">Monthly</label> 
             </div>
+            <br>
             <div>
-                <label for="start_date">Start Date</label>
-                <input type="text" id="start_date" name="start_date" placeholder="YYYY-MM-DD" required>
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date" required>
             </div>
+            <br>
             <div>
-                <label for="end_date">End Date</label>
-                <input type="text" id="end_date" name="end_date" placeholder="YYYY-MM-DD" required>
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date" required>
             </div>
+            <br>
             <button type="submit">Generate Chart</button>
         </form>
 
