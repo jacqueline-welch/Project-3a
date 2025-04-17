@@ -44,15 +44,14 @@
                 <input type="date" id="end_date" name="end_date" required>
             </div>
             <br>
-            <button type="submit">Generate Chart</button>
+            <button style="padding:3px 25px; font-size:1.1em" type="submit">Generate Chart</button><br><br>
         </form>
 
         {% if error %}
-        <p style="color:red;">{{ error }}</p>
+        <p style="color:Tomato">{{ error }}</p>
         {% endif %}
 
         {% if chart_svg %}
-        <h2>{{ request.form['symbol'] }} Stock Chart ({{ request.form['start_date'] }} to {{ request.form['end_date'] }})</h2>
         {{ chart_svg | safe }}
         {% endif %}
     </body>

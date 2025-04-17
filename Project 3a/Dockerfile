@@ -10,3 +10,7 @@ COPY . .
 EXPOSE 5001
 
 CMD ["python", "Project-3a.py"]
+
+
+# docker build -t project 3a .
+# docker run -p 5001:5001 --name project-3a-container project3a:latest
